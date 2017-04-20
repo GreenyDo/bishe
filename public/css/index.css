@@ -2,6 +2,7 @@ html,body,div,p{
 	margin: 0;
 	padding: 0;
 	border: 0;
+	font-family: "Microsoft YaHei";
 }
 body{
 	background: #26d8b0;/*#22C3AA*/
@@ -16,14 +17,65 @@ body{
 	margin:0 auto;
 	margin-top: 4px;
 	background: #f3f3f3;/*#efefef*/
-
+}
+#home_icon{
+	float: left;
+	width: 180px;
+	height: 80px;
+	margin-left: 65px;
+	margin-top: 2px;
+	position: relative;
+	
+}
+#home_3d{
+	position: absolute;
+	left:4px; 
+	top:-10px;
+	font-size: 58px;
+	font-weight: 600; 
+	color: #75a9ff;
+	text-shadow:5px 4px 5px #abcbff;
+}
+#home_home{
+	position: absolute;
+	left: 7px;
+	top: 51px;
+	font-size: 27px;
+	font-weight:100; 
+	color: #848484;
+}
+#home_name{
+	border: 1px solid #f3f3f3;
+	width: 480px;
+	height: 66px;
+	float: left;
+	margin-left: 55px;
+	margin-top: 11px;
+	font-size: 40px;
+	color: #848484;
+}
+#exit{
+	border: 3px solid #f3f3f3;
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-top: 18px;
+	margin-left: 61px;
+	border-radius: 25px;
+	background-color: #ff8430;
+}
+#exit_text{
+	font-size: 14px;
+	color: #545454;
+	margin-left: 10px;
+	margin-top: 12px;
 }
 #page_body{
 	border: 1px solid #969696;
 	border-radius: 6px;
 	box-shadow: 0px 0px 10px 3px #969696;/*#888*/
 	width: 913px;
-	height: 800px;
+	height: 820px;
 	margin:0 auto;
 	margin-top:16px;
 	background: #f3f3f3;/*#efefef*/
@@ -33,9 +85,8 @@ body{
     width: 200px;
     height: 400px;
     float: left;
-    margin-left: 14px;
-    margin-top: 12px;
-    text-align: center;
+    margin-left: 24px;
+    margin-top: 26px; 
 }
 .aside_button{
 	border: 2px solid #969696;
@@ -43,14 +94,32 @@ body{
 	width: 180px;
 	height: 40px;
 	margin-bottom: 22px;
-
+	text-align: center;
+	background-color: #bbe886;
+}
+.aside_button p{
+	margin-top: 7px;
+	font-size: 15px;
+	color: black;
 }
 #body_content{
-	border: 1px solid yellow;
-	width: 500px;
-	height: 400px;
+	border: 3px solid #f3f3f3;
+	border-radius: 11px;
+	width: 630px;
+	height: 700px;
 	margin-left: 250px;
-	margin-top:4px;
+	margin-top:24px;
+	position: relative;
+	/*background-image: url('../images/content.jpg');*/
+	
+}
+#content_bg{
+	border-radius: 9px;
+	position: absolute;
+	width: 100%;
+	height: 693px;
+	opacity: 0.4;
+	z-index: 0;
 }
 #page_foot{
 	border: 1px solid #26d8b0;

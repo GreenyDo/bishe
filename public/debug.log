@@ -21,3 +21,6 @@
 [0419/175646:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
 [0419/175646:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
 [0419/175646:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0420/123453:ERROR:process_reader_win.cc(233)] ReadMemory at 0x12fb000 of 20480 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
+[0420/123453:ERROR:crash_report_exception_handler.cc(98)] WriteEverything failed
+[0420/123453:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
