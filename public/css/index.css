@@ -11,11 +11,11 @@ body{
 #page_head{
 	border: 1px solid #969696;
 	border-radius: 6px;
-	box-shadow: 0px 0px 10px 3px #969696;/*#888*/
+	box-shadow: 0px 0px 26px 3px #969696;/*#888*/
 	width: 913px;
 	height: 90px;
 	margin:0 auto;
-	margin-top: 4px;
+	margin-top: 16px;
 	background: #f3f3f3;/*#efefef*/
 }
 #home_icon{
@@ -25,6 +25,7 @@ body{
 	margin-left: 65px;
 	margin-top: 2px;
 	position: relative;
+
 	
 }
 #home_3d{
@@ -34,7 +35,11 @@ body{
 	font-size: 58px;
 	font-weight: 600; 
 	color: #75a9ff;
-	text-shadow:5px 4px 5px #abcbff;
+	text-shadow:5px 4px 6px #8fb9ff;/*#abcbff*/
+	cursor: pointer;
+}
+#home_3d:hover{
+	text-shadow:5px 4px 11px #abcbff;
 }
 #home_home{
 	position: absolute;
@@ -63,6 +68,10 @@ body{
 	margin-left: 61px;
 	border-radius: 25px;
 	background-color: #ff8430;
+	cursor: pointer;
+}
+#exit:hover{
+	background-color: #ababab;
 }
 #exit_text{
 	font-size: 14px;
@@ -73,7 +82,7 @@ body{
 #page_body{
 	border: 1px solid #969696;
 	border-radius: 6px;
-	box-shadow: 0px 0px 10px 3px #969696;/*#888*/
+	box-shadow: 0px 0px 26px 3px #969696;/*#888*/
 	width: 913px;
 	height: 820px;
 	margin:0 auto;
@@ -85,30 +94,35 @@ body{
     width: 200px;
     height: 400px;
     float: left;
-    margin-left: 24px;
-    margin-top: 26px; 
+    margin-left: 28px;
+    margin-top: 23px; 
 }
 .aside_button{
-	border: 2px solid #969696;
+	border: 2px solid #989898;
 	border-radius: 20px;
-	width: 180px;
+	width: 171px;
 	height: 40px;
 	margin-bottom: 22px;
 	text-align: center;
 	background-color: #bbe886;
 }
+.aside_button:hover{
+	background-color:#ef6134;
+}
 .aside_button p{
 	margin-top: 7px;
 	font-size: 15px;
-	color: black;
+	color: #1f1f1f;
+	cursor: pointer;
+	font-weight:500;
 }
 #body_content{
 	border: 3px solid #f3f3f3;
 	border-radius: 11px;
-	width: 630px;
+	width: 659px;
 	height: 700px;
-	margin-left: 250px;
-	margin-top:24px;
+	margin-left: 233px;
+	margin-top:21px;
 	position: relative;
 	/*background-image: url('../images/content.jpg');*/
 	
@@ -123,7 +137,7 @@ body{
 }
 #page_foot{
 	border: 1px solid #26d8b0;
-	margin-top: 10px;
+	margin-top: 14px;
 	margin-bottom: 4px;
 	text-align: center;
 }
