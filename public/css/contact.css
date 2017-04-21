@@ -1,0 +1,11 @@
+#contact{
+	position: absolute;
+	z-index: 1;
+	top: 58px;
+	left: 30px;
+	font-size: 43px;
+	color: #1b1b1b;
+}
+#button_contact{
+	background-color: #ffea30;
+}
