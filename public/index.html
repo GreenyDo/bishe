@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>欢迎使用三维模型管理与检索系统</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="tools/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-     <link rel="stylesheet" href="css/search.css">
-  </head>
-  <body>
-    <div id="page_head">
-      <div id="home_icon">
-        <div id="home_3d">3D</div>
-        <div id="home_home">home</div>
-      </div>
-      <div id="home_name">三维模型管理与检索系统</div>
-      <div id="exit">
-        <div id="exit_text">
-          Exit
-        </div>
-      </div>
-    </div>
-    <div id="page_body">
-      <div id="body_aside">
-        <div class="aside_button"><p>我的作品</p></div>
-        <div class="aside_button"><p>个人信息</p></div>
-        <div class="aside_button"><p>添加作品</p></div>
-        <div class="aside_button"><p>更改密码</p></div>
-        <a href="more.html"><div class="aside_button"><p>更多精彩内容</p></div></a>
-        <a href="webgl.html"><div class="aside_button"><p>WebGL知识</p></div></a>
-        <a href="contact.html"><div class="aside_button"><p>联系我们</p></div></a>
-        <div class="aside_button"><p>退出登录</p></div>
-      </div>
-      <div id="body_content">
-        <div id="search_section">
-          <form action="form-inline">
-            <div class="form-group">
-              <input id="search_input" type="text" class="form-control" placeholder="请输入要查询的作品名">
-              <input id="search_button" type="button" class="btn btn-lg btn-info" value="搜索">
+    <head>
+        <title>登录login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <link rel="stylesheet" href="tools/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/login.css">
+        </head>
+        <body>
+            <img id="login_bg" src="images/login.jpg" alt="图片无法显示">
+            <div id="login_box">
+                <p id="web_title">三维模型管理与检索系统</p>
+                <p id="login_title">欢迎登录</p>
+                <form action="/verify" method="post">
+                    <div id="wrap">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">用户名</span>
+                            <input name="name" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon2">密码</span>
+                            <input name="password" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon3">验证码</span>
+                            <input name="captcha" type="text" class="form-control" placeholder="请输入验证码" aria-describedby="basic-addon1">
+                        </div>
+                        <div id="captcha_code"></div><!--验证码-->
+                            <input type="button" value="点击获取验证码" class="btn btn-xs btn-warning" id="captcha_button">
+                        <input type="submit" id="submit" class="btn btn-default " value="登录">
+                        <input type="reset" id="reset" class="btn btn-default ">
+                         <input type="button" id="signin" class="btn btn-default " value="注册">
+                    </div>
+                </form>
             </div>
-          </form>
-        </div>
-        <img id="content_bg" src="images/content.jpg" alt="">
-      </div>
-    </div>
-    <div id="page_foot">copyright 2017 @dumingxu</div>
-    <script src="tools/jquery.js"></script>
-    <script src="tools/bootstrap/js/bootstrap.min.js"></script>
-  </body>
-</html>
+            <script src="tools/jquery.js"></script>
+            <script src="tools/bootstrap/js/bootstrap.min.js"></script>
+        </body>
+    </html>

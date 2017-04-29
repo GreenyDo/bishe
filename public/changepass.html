@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WebGL</title>
+    <title>更改密码</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="tools/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/webgl.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/changepass.css">
+    
   </head>
   <body>
     <div id="page_head">
@@ -27,18 +27,24 @@
         <div class="aside_button"><p>我的作品</p></div>
         <div class="aside_button"><p>个人信息</p></div>
         <a href="addproduct.html"><div class="aside_button"><p>添加作品</p></div></a>
-        <a href="changepass.html"><div class="aside_button"><p>更改密码</p></div></a>
+        <a href="changepass.html"><div id="button_change" class="aside_button"><p>更改密码</p></div></a>
         <a href="more.html"><div class="aside_button"><p>更多精彩内容</p></div></a>
-        <a href="webgl.html"><div id="button_webgl" class="aside_button"><p>WebGL知识</p></div></a>
+        <a href="webgl.html"><div class="aside_button"><p>WebGL知识</p></div></a>
         <a href="contact.html"><div class="aside_button"><p>联系我们</p></div></a>
         <div class="aside_button"><p>退出登录</p></div>
       </div>
       <div id="body_content">
-        <div id="urls">
-          <a href="https://zh.wikipedia.org/wiki/WebGL" target="_blank"><div id="url_one" class="urls-all"><p>维基百科</p></div></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API" target="_blank"><div id="url_two" class="urls-all"><p>APIs</p></div></a>
-          <a href="http://www.hewebgl.com/" target="_blank"><div id="url_three" class="urls-all"><p>WebGL中文网</p></div></a>
-          <a href="https://developer.tizen.org/zh-hans/community/tip-tech/webgl-tutorial?langswitch=zh-hans" target="_blank"><div id="url_four" class="urls-all"><p>教程</p></div></a>
+        <div id="password_form" >
+          <p>更改密码</p>
+          <form action="/changepassword" method="post" class="form-group">
+            <label for="old_password">旧密码</label>
+            <input type="password" name="oldpassword" id="old_password" class="form-control my-input" placeholder="旧密码">
+            <label for="new_password">新密码</label>
+            <input type="password" name="newpassword" id="new_password" class="form-control my-input" placeholder="新密码">
+            <label for="again">再次输入新密码</label>
+            <input type="password" name="again" id="again" class="form-control my-input" placeholder="再次输入新密码">
+            <input id="button_submit" type="button" value="提交" class="btn btn-info button-submit">
+          </form>
         </div>
         <img id="content_bg" src="images/content.jpg" alt="">
       </div>

@@ -1,40 +1,8 @@
-[0417/164632:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0417/164632:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0418/104725:ERROR:file_io.cc(30)] read: expected 61376, observed 0
-[0418/104725:ERROR:crash_report_database_win.cc(429)] failed to read records
-[0418/105725:ERROR:file_io.cc(30)] read: expected 61376, observed 0
-[0418/105725:ERROR:crash_report_database_win.cc(429)] failed to read records
-[0418/105725:ERROR:file_io.cc(30)] read: expected 61376, observed 0
-[0418/105725:ERROR:crash_report_database_win.cc(429)] failed to read records
-[0418/110225:ERROR:file_io.cc(30)] read: expected 61376, observed 0
-[0418/110225:ERROR:crash_report_database_win.cc(429)] failed to read records
-[0418/110705:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0418/110705:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0418/110705:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0418/110705:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0418/110705:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0418/110705:ERROR:file_io.cc(30)] read: expected 61376, observed 0
-[0418/110705:ERROR:crash_report_database_win.cc(429)] failed to read records
-[0418/113515:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0418/113515:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0418/113515:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0419/175646:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0419/175646:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0419/175646:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0420/123453:ERROR:process_reader_win.cc(233)] ReadMemory at 0x12fb000 of 20480 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
-[0420/123453:ERROR:crash_report_exception_handler.cc(98)] WriteEverything failed
-[0420/123453:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
-[0420/230114:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0420/230114:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0420/230114:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0421/115218:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0421/115218:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0421/115230:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0421/115230:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0421/115230:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0421/115230:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0421/115230:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
-[0425/104103:ERROR:process_reader_win.cc(233)] ReadMemory at 0xf76000 of 40960 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
-[0425/104104:ERROR:crash_report_exception_handler.cc(98)] WriteEverything failed
-[0425/104104:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
-[0425/121304:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
+[0429/122233:ERROR:process_reader_win.cc(173)] ResumeThread: 参数错误。 (0x57)
+[0429/122233:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0429/122233:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0429/122233:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0429/122233:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0429/122233:ERROR:process_reader_win.cc(142)] SuspendThread: 拒绝访问。 (0x5)
+[0429/122233:ERROR:exception_snapshot_win.cc(87)] thread ID 9492 not found in process
+[0429/122233:WARNING:crash_report_exception_handler.cc(56)] ProcessSnapshotWin::Initialize failed
