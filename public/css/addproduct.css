@@ -48,9 +48,34 @@
 	border-bottom-color: transparent;
 	background-color: #ff794f;
 }
+/*content*/
+/*content left*/
 #left{
 	
 }
+#left_form{
+	width: 377px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+#button_file{
+	margin-top: 43px;
+}
+#file_input{
+	margin-bottom: 22px;
+}
+/*right*/
+#right_form{
+	width: 580px;
+	margin: 0 auto;
+	margin-top: 22px;
+}
+#product_name{
+	margin-bottom: 20px;
+}
+#product_url{
+    margin-bottom: 20px;
+}
 #right{
-
+	
 }
