@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var index = require('./routes/index');
 var users = require('./routes/users');
-var verify = require('./function/verify');
+var verify = require('./routes/verify');
+var signin = require('./routes/signin');
 
 var app = express();
 
@@ -26,7 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use("/",users);
 // app.use("/",index);
-app.use(verify);
+
+app.use(signin);
+app.use(verify); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
