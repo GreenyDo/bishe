@@ -6,6 +6,7 @@ var user = require('./../mongodb/contactdb.js');
 mongoose.Promise = require('bluebird');
 // 获取验证码
 
+
 var thisCaptchaCode = "";//存储用户填写的验证码
 router.get('/captcha', function (req, res ) {
 	var captcha = svgCaptcha.create();//创建验证码
@@ -32,20 +33,13 @@ router.post('/verify', function (req, res){
 			}
 			
 		});
-		// if(verifyUserName(req.body.name)){
-		// 	if(verifyPassword(req.body.password)){
-		// 		res.render("./../public/user.html");
-		// 	}else{
-		// 		res.render("errorpassword");
-		// 	}
-
-		// }else{
-		// 	res.render("nouser");
-		// }
+		
 	}else{
 		res.render("errorcaptcha");
 	}
 });
+
+
 
 
 
@@ -60,26 +54,6 @@ var verifyCaptcha = function(captchaCode){
 
 
 
-// 用户名验证function
-// var verifyUserName = function(userName){
-// 	if(userName==user.name){
-// 		return true;
-// 	}else{
-// 		return false;
-// 	}
-// };
-
-
-
-// 用户密码验证function
-// var verifyPassword = function(password){
-// 	if(password==user.password){
-// 		return true;
-// 	}else{
-// 		return false;
-// 	}
-
-// };
 
 
 
