@@ -23,7 +23,9 @@ router.post('/signin',function (req, res){
 			if(thisUser==null){
 				var userEntity = new user({
 					name: req.body.name,
-					password: req.body.password
+					password: req.body.password,
+					productsname:{test:1},
+					products:{test:1}
 				});
 				userEntity.save(function(err){
 					if(err){

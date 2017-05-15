@@ -1,0 +1,31 @@
+#button_change{
+	background-color: #ffea30;
+}
+#password_form{
+	position: absolute;
+	z-index: 2;
+	left: 16px;
+	top: 8px;
+	width: 95%;
+}
+#password_form p{
+	text-align: center;
+	font-size: 30px;
+	color: #ff6458;
+	margin-bottom: 22px;
+}
+#password_form label{
+	color: #008192;
+	font-size: 15px;
+}
+.my-input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.button-submit{
+	display: block;
+	width: 131px;
+	margin: 0 auto;
+	margin-top: 40px;
+	height: 40px;
+}

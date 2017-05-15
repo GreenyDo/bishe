@@ -1,0 +1,73 @@
+html,body,div,p{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body{
+	overflow: hidden;
+}
+@media all and (max-width: 1200px) {
+	#signin_box{
+		width: 96%;
+	}
+	#signin_bg{
+		display: none;
+	}
+}
+
+#signin_box{
+	width: 380px;
+	height: 435px;
+	border: 2px solid #a5a5a5;
+	position: relative;
+	margin: 0 auto;
+	top:150px;
+	border-radius: 4%;
+	background-color: #FFF;
+}
+#signin_title{
+	text-align: center;
+	font-size: 2em;
+	font-family: "Microsoft YaHei";
+	margin-top:1%;
+	text-shadow:0px 2px 9px #888;
+}
+
+#signin_bg{
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	margin-top: -152px;
+	min-width: 1000px;
+	opacity:0.7;
+}
+#wrap{
+	width: 80%;
+	min-height: 83%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 4%;
+}
+.input-group{
+	margin:0 auto;
+	margin-bottom: 7%;
+
+
+}
+#submit,#reset{
+	margin-right: 37px;
+}
+#basic-addon1,#basic-addon2,#basic-addon3,#basic-addon4{
+	width: 27%;
+}
+#captcha_code{
+	width: 230px;
+	height: 40px;
+	margin: 0 auto;	
+}
+#captcha_button{
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	clear: right;
+}

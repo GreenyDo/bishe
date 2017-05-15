@@ -1,0 +1,96 @@
+html,body,div,p{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body{
+	overflow: hidden;
+}
+@media all and (max-width: 650px) {
+	#login_box{
+		width: 96%;
+	}
+	#login_bg{
+		display: none;
+	}
+}
+@media all and (min-width: 650px) {
+
+	#login_box{
+		animation: loginbox 2s;
+		-moz-animation: loginbox 2s;	/* Firefox */
+		-webkit-animation: loginbox 2s;	/* Safari 和 Chrome */
+		-o-animation: loginbox 2s;	/* Opera */
+	}
+	@keyframes loginbox{
+		from{
+			top: 400px;
+			opacity: 0.1;
+		}
+		to{
+			top:150px;
+			opacity: 1.0;
+		}
+	}
+}
+#login_box{
+	width: 320px;
+	height: 364px;
+	border: 3px solid #aca5d6;
+	position: relative;
+	margin: 0 auto;
+	top:150px;
+	border-radius: 4%;
+	box-shadow: 0px 2px 40px #333;
+	background-color: #FFF;
+}
+#login_title{
+	text-align: center;
+	font-size: 2em;
+	font-family: "Microsoft YaHei";
+	margin-top:1%;
+	text-shadow:0px 2px 9px #888;
+}
+#web_title{
+	text-align: center;
+	font-size: 22px;
+	font-family: "Microsoft YaHei";
+	margin-top:4px;
+	color: #848282;
+	
+}
+#login_bg{
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	margin-top: -152px;
+	min-width: 1000px;
+}
+#wrap{
+	width: 80%;
+	min-height: 83%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 4%;
+}
+.input-group{
+	margin-bottom: 7%;
+
+}
+#submit,#reset{
+	margin-right: 37px;
+}
+#basic-addon1,#basic-addon2,#basic-addon3{
+	width: 27%;
+}
+#captcha_code{
+	width: 230px;
+	height: 40px;
+	margin: 0 auto;	
+}
+#captcha_button{
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	clear: right;
+}

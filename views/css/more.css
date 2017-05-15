@@ -1,0 +1,14 @@
+#button_more{
+	background-color: #ffea30;
+}
+#urls{
+	position: absolute;
+	top: 2px;
+	left: 57px;
+	z-index: 2;
+}
+#urls a{
+	display: block;
+	font-size: 27px;
+	margin-top: 55px;
+}

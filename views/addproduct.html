@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>添加作品</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tools/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/addproduct.css">
+  </head>
+  <body>
+    <div id="page_head">
+      <div id="home_icon">
+        <a href="user.html"><div id="home_3d">3D</div></a>
+        <div id="home_home">home</div>
+      </div>
+      <div id="home_name">三维模型管理与检索系统</div>
+      <div id="exit">
+        <a href="logout.html">
+        <div id="exit_text">
+          Exit
+        </div>
+        </a>
+      </div>
+    </div>
+    <div id="page_body">
+      <div id="body_aside">
+        <a href="/myproduct.html"><div class="aside_button" id="my_product"><p>我的作品</p></div></a>
+        <a href="/userinfo.html"><div class="aside_button" id="my_userinfo"><p>个人信息</p></div></a>
+        <a href="addproduct.html"><div id="button_add" class="aside_button"><p>添加作品</p></div></a>
+        <a href="changepass.html"><div class="aside_button"><p>更改密码</p></div></a>
+        <a href="more.html"><div class="aside_button"><p>更多精彩内容</p></div></a>
+        <a href="webgl.html"><div class="aside_button"><p>WebGL知识</p></div></a>
+        <a href="contact.html"><div class="aside_button"><p>联系我们</p></div></a>
+        <a href="logout.html"><div class="aside_button" id="logout1"><p>退出登录</p></div></a>
+      </div>
+      <div id="body_content">
+        <div id="content_box">
+          <div>
+            <!-- Nav tabs -->
+            <ul id="nav_tabs" class="nav nav-tabs" >
+              <li id="head_left" class="active"><a href="#left" aria-controls="left"  data-toggle="tab">通过上传本地文件</a></li>
+              <li id="head_right"><a href="#right" aria-controls="right"  data-toggle="tab">通过Web作品地址</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="left">
+                <div id="left_form" class="form-group">
+                  <form action="/byfile" method="post" enctype="multipart/form-data">
+                    <label for="file_input">File input</label>
+                    <input type="file" name="file" id="file_input">
+                    <label for="product_describe">Product name</label>
+                    <input name="productname" class="form-control" id="product_describe" placeholder="请输入作品名">
+                    <input type="submit" class="btn btn-primary" id="button_file">
+                  </form>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="right">
+                <div id="right_form" class="form-group">
+                  <form action="/byurl" method="post">
+                    <label for="product_name">File input</label>
+                    <input name="producturlname" type="text" class="form-control" id="product_name" placeholder="请输入作品名">
+                    <label for="product_url">File input</label>
+                    <input name="producturl" type="text" class="form-control" id="product_url" placeholder="作品的web地址">
+                    <input type="submit" class="btn btn-primary">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="page_foot">copyright 2017 @dumingxu</div>
+    <script src="tools/jquery.js"></script>
+    <script src="tools/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/getinfo.js"></script>
+    <script>
+      alert("上传成功！");
+    </script>
+  </body>
+</html>
