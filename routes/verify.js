@@ -1,12 +1,15 @@
 var express = require('express');
-var svgCaptcha = require('svg-captcha');
 var router = express.Router();
+var svgCaptcha = require('svg-captcha');
 var mongoose = require('mongoose');
 var user = require('./../mongodb/contactdb.js');
 mongoose.Promise = require('bluebird');
+var multer  = require('multer');
+
+
 // 获取验证码
-
-
+var userStorage = "";
+var sessionIDStorage = "";
 var thisCaptchaCode = "";//存储用户填写的验证码
 router.get('/captcha', function (req, res ) {
 	var captcha = svgCaptcha.create();//创建验证码
@@ -14,8 +17,12 @@ router.get('/captcha', function (req, res ) {
 	res.status(200).send(captcha.data);//发送svg验证码图形
 	thisCaptchaCode = captcha.text;
 });
+
+
+
 // 登录验证
-router.post('/verify', function (req, res){
+router.post('/verify', function (req, res,next){
+	
 	if(verifyCaptcha(req.body.captcha)){
 		user.findOne({'name':req.body.name},function(err,thisUser){
 			if(thisUser==null){
@@ -23,7 +30,11 @@ router.post('/verify', function (req, res){
 			}else{
 				if(thisUser.name==req.body.name){
 					if(thisUser.password==req.body.password){
+						userStorage = thisUser.name;
 						res.render('./../public/user.html');
+						sessionIDStorage = req.sessionID;
+						 
+						
 					}else{
 						res.render("errorpassword");
 					}
@@ -37,8 +48,105 @@ router.post('/verify', function (req, res){
 	}else{
 		res.render("errorcaptcha");
 	}
+	
 });
 
+
+
+// 获取作品
+router.get('/myproduct.html', function(req, res) {
+ 	if((userStorage!="")&&(req.sessionID)){
+ 		res.render('myproduct');
+ 	}else{
+ 		res.render('pleaselogin');
+ 	}
+  	
+});
+
+
+
+// 获取用户信息
+router.get('/userinfo.html', function(req, res) {
+  
+  	res.render('myinfo');
+  
+});
+
+
+
+// 登出
+router.get('/logout.html', function(req, res) {
+	userStorage="";
+	sessionIDStorage = "";
+  	
+
+  	res.render('logout');
+
+});
+
+
+// 上传作品 通过上传文件
+var filenamenow = "";
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  filename: function (req, file, cb) {
+  	filenamenow = Date.now()+"."+"html";
+    cb(null, filenamenow);
+  }
+});
+
+var upload = multer({ storage: storage });
+router.post('/byfile',upload.single('file'),function(req, res){
+	var fileinname = req.body.productname;
+	if((userStorage!="")&&(req.sessionID)){
+ 		user.findOne({'name':userStorage},function(err,thisUser){
+ 			thisUser.productsname[fileinname] = fileinname;
+ 			thisUser.products[fileinname] = filenamenow;
+ 		});
+ 	}else{
+ 		res.render('pleaselogin');
+ 	}
+  	
+});
+
+
+
+
+
+
+
+// 上传作品，通过提供作品地址
+router.post('/byurl',function(req, res){
+	var fileinname = req.body.producturlname;
+	if((userStorage!="")&&(req.sessionID)){
+ 		user.findOne({'name':userStorage},function(err,thisUser){
+ 			thisUser.productsname[fileinname] = fileinname;
+ 			thisUser.products[fileinname] = req.body.producturl;
+ 		});
+ 	}else{
+ 		res.render('pleaselogin');
+ 	}
+});
+
+
+
+
+// 改变密码
+router.post('/changepassword',function(req, res){
+	var oldpassword = req.body.oldpassword;
+	var newpassword = req.body.newpassword;
+	var again = req.body.again;
+	if((userStorage!="")&&(req.sessionID)){
+ 		user.findOne({'name':userStorage},function(err,thisUser){
+ 			thisUser.productsname[fileinname] = fileinname;
+ 			thisUser.products[fileinname] = req.body.producturl;
+ 		});
+ 	}else{
+ 		res.render('pleaselogin');
+ 	}
+});
 
 
 

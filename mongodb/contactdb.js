@@ -8,6 +8,7 @@ var userSchema = new schema({
 	age:String,
 	email:String,
 	phone:String,
+	productsname:Object,
 	products:Object
 });
 
