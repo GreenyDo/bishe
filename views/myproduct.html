@@ -56,11 +56,9 @@
       </div>
       <div id="body_content">
         <div id="product_section">
-         <a href="">name1</a>
-         <a href="">name2</a>
-         <a href="">name3</a>
-         <a href="">name4</a>
-         <a href="">name5</a>
+          <% for(var i=0; i<list.length; i++) {%>
+          <a target="_blank" href=<%= list[i].url %> ><%= list[i].name %></a>
+          <% } %>
         </div>
         <img id="content_bg" src="images/content.jpg" alt="">
       </div>

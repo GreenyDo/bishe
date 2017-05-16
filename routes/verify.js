@@ -7,6 +7,7 @@ mongoose.Promise = require('bluebird');
 var multer  = require('multer');
 
 
+
 // 获取验证码
 var userStorage = "";
 var sessionIDStorage = "";
@@ -56,7 +57,13 @@ router.post('/verify', function (req, res,next){
 // 获取作品
 router.get('/myproduct.html', function(req, res) {
  	if((userStorage!="")&&(req.sessionID)){
- 		res.render('myproduct');
+ 		user.findOne({'name':userStorage},function(err,thisUser){
+ 			ejsUser =  {
+ 				list:thisUser.products
+ 			}
+ 			res.render('myproduct',ejsUser);
+ 		});
+ 		
  	}else{
  		res.render('pleaselogin');
  	}
@@ -67,8 +74,19 @@ router.get('/myproduct.html', function(req, res) {
 
 // 获取用户信息
 router.get('/userinfo.html', function(req, res) {
-  
-  	res.render('myinfo');
+  	if((userStorage!="")&&(req.sessionID)){
+  		user.findOne({'name':userStorage},function(err,thisUser){
+ 			ejsUser =  {
+ 				ejsname:thisUser.name,
+ 				ejscounts:thisUser.products.length
+ 			}
+ 			res.render('myinfo',ejsUser);
+ 		});
+ 		
+ 	}else{
+ 		res.render('pleaselogin');
+ 	}
+  	
   
 });
 
@@ -89,7 +107,7 @@ router.get('/logout.html', function(req, res) {
 var filenamenow = "";
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/');
+    cb(null, 'public/uploads/');
   },
   filename: function (req, file, cb) {
   	filenamenow = Date.now()+"."+"html";
@@ -101,10 +119,12 @@ var upload = multer({ storage: storage });
 router.post('/byfile',upload.single('file'),function(req, res){
 	var fileinname = req.body.productname;
 	if((userStorage!="")&&(req.sessionID)){
+		
  		user.findOne({'name':userStorage},function(err,thisUser){
+ 			
  			var pObj = {
  				name:fileinname,
- 				url:"./../uploads"+filenamenow
+ 				url:"http://127.0.0.1:3000/"+"uploads/"+filenamenow
  			}
  			thisUser.products.push(pObj);
  			thisUser.save(function(err){});
@@ -134,9 +154,10 @@ router.post('/byurl',function(req, res){
  			
  			var pObj = {
  				name:fileinname,
- 				url:req.body.producturl
+ 				url:"http://"+req.body.producturl
  			}
  			thisUser.products.push(pObj);
+ 			thisUser.save(function(err){});
  			res.render('addproduct');
  		});
  	}else{
