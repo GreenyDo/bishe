@@ -72,6 +72,29 @@ router.get('/myproduct.html', function(req, res) {
 
 
 
+
+// 搜索作品
+router.post('/search',function(req, res){
+	if((userStorage!="")&&(req.sessionID)){
+		var searchName = req.body.searchp;
+ 		user.findOne({'name':userStorage},function(err,thisUser){
+ 			var userArray = thisUser.products;
+ 			var userArrayResult = userArray.filter(function(item,index,array){
+ 				return (item.name==searchName);
+ 			});
+ 			ejsUser =  {
+ 				list:userArrayResult
+ 			}
+ 			res.render('myproduct',ejsUser);
+ 		});
+ 		
+ 	}else{
+ 		res.render('pleaselogin');
+ 	}
+});
+
+
+
 // 获取用户信息
 router.get('/userinfo.html', function(req, res) {
   	if((userStorage!="")&&(req.sessionID)){
@@ -90,6 +113,79 @@ router.get('/userinfo.html', function(req, res) {
   
 });
 
+
+
+// 删除作品
+router.post('/delete', function(req, res) {
+	var deleteName = req.body.productname1;
+	
+  	if((userStorage!="")&&(req.sessionID)){
+  		user.findOne({'name':userStorage},function(err,thisUser){
+  			var deleteIndex = 1000;
+  			var userArray = thisUser.products;
+ 			var userArrayResult = userArray.some(function(item,index,array){
+ 				deleteIndex = index;
+ 				
+ 				return (item.name==deleteName);
+ 			});
+ 			
+ 			if(userArrayResult==true){
+ 				thisUser.products.splice(deleteIndex,1);
+ 				thisUser.save(function(err){});
+ 				res.render("deletesuccess");
+ 			}else{
+ 				res.render("deleteerror");
+ 			}
+ 			
+ 			
+ 		});
+ 		
+ 	}else{
+ 		res.render('pleaselogin');
+ 	}
+  	
+  
+});
+
+
+
+// 更新作品
+router.post('/updata', function(req, res) {
+	var updataName = req.body.productname2;
+	console.log(req.body);
+	console.log(req.body.productname2);
+	console.log(updataName);
+	console.log("haha");
+  	if((userStorage!="")&&(req.sessionID)){
+  		user.findOne({'name':userStorage},function(err,thisUser){
+  			var updataIndex = 1000;
+  			var userArray = thisUser.products;
+ 			var userArrayResult = userArray.some(function(item,index,array){
+ 				updataIndex = index;
+ 				
+ 				return (item.name==updataName);
+ 			});
+ 			
+ 			if(userArrayResult==true){
+ 				var updataObj = {name:updataName,
+ 					url:req.body.producturl};
+ 				thisUser.products.splice(updataIndex,1);
+ 				thisUser.products.push(updataObj);
+ 				thisUser.save(function(err){});
+ 				res.render("updatasuccess");
+ 			}else{
+ 				res.render("updataerror");
+ 			}
+ 			
+ 			
+ 		});
+ 		
+ 	}else{
+ 		res.render('pleaselogin');
+ 	}
+  	
+  
+});
 
 
 // 登出
