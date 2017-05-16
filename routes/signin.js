@@ -24,9 +24,9 @@ router.post('/signin',function (req, res){
 				var userEntity = new user({
 					name: req.body.name,
 					password: req.body.password,
-					productsname:{test:1},
-					products:{test:1}
+					
 				});
+				
 				userEntity.save(function(err){
 					if(err){
 						console.log("增加数据发生错误");

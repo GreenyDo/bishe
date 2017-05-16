@@ -33,7 +33,7 @@ router.post('/verify', function (req, res,next){
 						userStorage = thisUser.name;
 						res.render('./../public/user.html');
 						sessionIDStorage = req.sessionID;
-						 
+						console.log(thisUser.products);
 						
 					}else{
 						res.render("errorpassword");
@@ -102,9 +102,16 @@ router.post('/byfile',upload.single('file'),function(req, res){
 	var fileinname = req.body.productname;
 	if((userStorage!="")&&(req.sessionID)){
  		user.findOne({'name':userStorage},function(err,thisUser){
+ 			var pObj = {
+ 				name:fileinname,
+ 				url:"./../uploads"+filenamenow
+ 			}
+ 			thisUser.products.push(pObj);
+ 			thisUser.save(function(err){});
+ 			
+
  			console.log(thisUser.productsname);
- 			thisUser.productsname[fileinname] = fileinname;
- 			thisUser.products[fileinname] = filenamenow;
+ 			console.log(thisUser.products);
  			res.render('addproduct');
  		});
  	}else{
@@ -124,8 +131,12 @@ router.post('/byurl',function(req, res){
 	var fileinname = req.body.producturlname;
 	if((userStorage!="")&&(req.sessionID)){
  		user.findOne({'name':userStorage},function(err,thisUser){
- 			thisUser.productsname[fileinname] = fileinname;
- 			thisUser.products[fileinname] = req.body.producturl;
+ 			
+ 			var pObj = {
+ 				name:fileinname,
+ 				url:req.body.producturl
+ 			}
+ 			thisUser.products.push(pObj);
  			res.render('addproduct');
  		});
  	}else{
@@ -141,11 +152,14 @@ router.post('/changepassword',function(req, res){
 	var oldpassword = req.body.oldpassword;
 	var newpassword = req.body.newpassword;
 	var again = req.body.again;
+	
 	if((userStorage!="")&&(req.sessionID)){
+		
 			if(again==newpassword){
 				user.findOne({'name':userStorage},function(err,thisUser){
  				    if(thisUser.password==oldpassword){
  				    	thisUser.password = newpassword;
+ 				    	thisUser.save(function(err){});
  				    	res.render('changeok');
  				    }else{
  				    	res.render('errorpassword');

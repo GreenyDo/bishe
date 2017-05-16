@@ -1,13 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>error</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+  <head>
+    <title>我的信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tools/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/search.css">
+    <style type="text/css">
+        #userinfo_section{
+           width: 545px;
+           height: 400px;
+           z-index: 2;
+           position: absolute;
+           left: 124px;
+           top: 30px;
+           font-size: 33px;
+           color: #3861ff;
+        }
+        #userinfo_section div{
+          
+           width: 90%;
+        }
         
-    </head>
-    <body>
-       <p>myinfo</p>
-    </body>
+    </style>
+  </head>
+  <body>
+    <div id="page_head">
+      <div id="home_icon">
+        <div id="home_3d">3D</div>
+        <div id="home_home">home</div>
+      </div>
+      <div id="home_name">三维模型管理与检索系统</div>
+      <div id="exit">
+        <a href="logout.html">
+        <div id="exit_text">
+          Exit
+        </div>
+        </a>
+      </div>
+    </div>
+    <div id="page_body">
+      <div id="body_aside">
+        <a href="/myproduct.html"><div class="aside_button" id="my_product"><p>我的作品</p></div></a>
+        <a href="/userinfo.html"><div class="aside_button" id="my_userinfo"><p>个人信息</p></div></a>
+        <a href="addproduct.html"><div class="aside_button"><p>添加作品</p></div></a>
+        <a href="changepass.html"><div class="aside_button"><p>更改密码</p></div></a>
+        <a href="more.html"><div class="aside_button"><p>更多精彩内容</p></div></a>
+        <a href="webgl.html"><div class="aside_button"><p>WebGL知识</p></div></a>
+        <a href="contact.html"><div class="aside_button"><p>联系我们</p></div></a>
+        <a href="logout.html"><div class="aside_button"><p>退出登录</p></div></a>
+      </div>
+      <div id="body_content">
+        <div id="userinfo_section">
+          <div><span>Your Name: </span><span>ming</span></div>
+          <div><span>Your Products count: </span><span>95</span></div>
+        </div>
+        <img id="content_bg" src="images/content.jpg" alt="">
+      </div>
+    </div>
+    <div id="page_foot">copyright 2017 @dumingxu</div>
+    <script src="tools/jquery.js"></script>
+    <script src="tools/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/user.js"></script>
+  </body>
 </html>

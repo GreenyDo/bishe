@@ -17,9 +17,11 @@
       </div>
       <div id="home_name">三维模型管理与检索系统</div>
       <div id="exit">
+        <a href="logout.html">
         <div id="exit_text">
           Exit
         </div>
+        </a>
       </div>
     </div>
     <div id="page_body">
@@ -31,7 +33,7 @@
         <a href="more.html"><div class="aside_button"><p>更多精彩内容</p></div></a>
         <a href="webgl.html"><div class="aside_button"><p>WebGL知识</p></div></a>
         <a href="contact.html"><div class="aside_button"><p>联系我们</p></div></a>
-        <div class="aside_button"><p>退出登录</p></div>
+        <a href="logout.html"><div class="aside_button"><p>退出登录</p></div></a>
       </div>
       <div id="body_content">
         <div id="password_form" >
@@ -43,7 +45,7 @@
             <input type="password" name="newpassword" id="new_password" class="form-control my-input" placeholder="新密码">
             <label for="again">再次输入新密码</label>
             <input type="password" name="again" id="again" class="form-control my-input" placeholder="再次输入新密码">
-            <input id="button_submit" type="button" value="提交" class="btn btn-info button-submit">
+            <input id="button_submit" type="submit" value="提交" class="btn btn-info button-submit">
           </form>
         </div>
        
@@ -53,6 +55,6 @@
     <script src="tools/jquery.js"></script>
     <script src="tools/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/webgl.js"></script>
-    <script src="js/getinfo.js"></script>
+    
   </body>
 </html>
