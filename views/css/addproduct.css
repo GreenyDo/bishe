@@ -70,11 +70,20 @@
 	margin: 0 auto;
 	margin-top: 22px;
 }
-#product_name{
+#product_name1{
+	margin-bottom: 20px;
+}
+#product_name2{
 	margin-bottom: 20px;
 }
 #product_url{
     margin-bottom: 20px;
+}
+#product_describe1{
+	 margin-bottom: 10px;
+}
+#product_describe2{
+	margin-bottom: 20px;
 }
 #right{
 	

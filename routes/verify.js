@@ -168,7 +168,9 @@ router.post('/updata', function(req, res) {
  			
  			if(userArrayResult==true){
  				var updataObj = {name:updataName,
- 					url:req.body.producturl};
+ 					url:req.body.producturl,
+ 					describe:req.body.productdescribe
+ 				};
  				thisUser.products.splice(updataIndex,1);
  				thisUser.products.push(updataObj);
  				thisUser.save(function(err){});
@@ -214,13 +216,15 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 router.post('/byfile',upload.single('file'),function(req, res){
 	var fileinname = req.body.productname;
+	var describe = req.body.productdescribe1;
 	if((userStorage!="")&&(req.sessionID)){
 		
  		user.findOne({'name':userStorage},function(err,thisUser){
  			
  			var pObj = {
  				name:fileinname,
- 				url:"http://127.0.0.1:3000/"+"uploads/"+filenamenow
+ 				url:"http://127.0.0.1:3000/"+"uploads/"+filenamenow,
+ 				describe:describe
  			}
  			thisUser.products.push(pObj);
  			thisUser.save(function(err){});
@@ -245,15 +249,18 @@ router.post('/byfile',upload.single('file'),function(req, res){
 // 上传作品，通过提供作品地址
 router.post('/byurl',function(req, res){
 	var fileinname = req.body.producturlname;
+	var describe = req.body.productdescribe2;
 	if((userStorage!="")&&(req.sessionID)){
  		user.findOne({'name':userStorage},function(err,thisUser){
  			
  			var pObj = {
  				name:fileinname,
- 				url:"http://"+req.body.producturl
+ 				url:"http://"+req.body.producturl,
+ 				describe:describe
  			}
  			thisUser.products.push(pObj);
  			thisUser.save(function(err){});
+ 			console.log(thisUser.products);
  			res.render('addproduct');
  		});
  	}else{

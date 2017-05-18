@@ -50,8 +50,10 @@
                   <form action="/byfile" method="post" enctype="multipart/form-data">
                     <label for="file_input">File input</label>
                     <input type="file" name="file" id="file_input">
-                    <label for="product_describe">Product name</label>
-                    <input name="productname" class="form-control" id="product_describe" placeholder="请输入作品名">
+                    <label for="product_name1">Product name</label>
+                    <input name="productname" class="form-control" id="product_name1" placeholder="请输入作品名">
+                     <label for="product_describe1">Product describe</label>
+                    <input name="productdescribe1" class="form-control" id="product_describe1" placeholder="作品描述">
                     <input type="submit" class="btn btn-primary" id="button_file">
                   </form>
                 </div>
@@ -59,10 +61,12 @@
               <div role="tabpanel" class="tab-pane fade" id="right">
                 <div id="right_form" class="form-group">
                   <form action="/byurl" method="post">
-                    <label for="product_name">File input</label>
-                    <input name="producturlname" type="text" class="form-control" id="product_name" placeholder="请输入作品名">
-                    <label for="product_url">File input</label>
+                    <label for="product_name2">Product name</label>
+                    <input name="producturlname" type="text" class="form-control" id="product_name2" placeholder="请输入作品名">
+                    <label for="product_url">Product url</label>
                     <input name="producturl" type="text" class="form-control" id="product_url" placeholder="作品的web地址">
+                     <label for="product_describe2">Product describe</label>
+                    <input name="productdescribe2" class="form-control" id="product_describe2" placeholder="作品描述">
                     <input type="submit" class="btn btn-primary">
                   </form>
                 </div>
