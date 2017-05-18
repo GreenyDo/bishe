@@ -73,26 +73,84 @@ router.get('/myproduct.html', function(req, res) {
 
 
 
-// 搜索作品
+
+// 搜索作品2.0
 router.post('/search',function(req, res){
 	if((userStorage!="")&&(req.sessionID)){
-		var searchName = req.body.searchp;
- 		user.findOne({'name':userStorage},function(err,thisUser){
- 			var userArray = thisUser.products;
- 			var userArrayResult = userArray.filter(function(item,index,array){
- 				return (item.name==searchName);
- 			});
- 			ejsUser =  {
- 				list:userArrayResult
- 			}
- 			res.render('myproduct',ejsUser);
- 		});
- 		
+		var searchcontent = req.body.searchp;
+		var searchway = parseInt(req.body.searchway);
+		switch(searchway){
+			// 作品名
+			case 1:
+				var searchName = searchcontent;
+				user.findOne({'name':userStorage},function(err,thisUser){
+ 					var userArray = thisUser.products;
+ 					var userArrayResult = userArray.filter(function(item,index,array){
+ 						return (item.name==searchName);
+ 					});
+ 					ejsUser =  {
+ 						list:userArrayResult
+ 					}
+ 					res.render('myproduct',ejsUser);
+ 				});
+ 				break;
+
+		    //作品描述 
+ 			case 2:
+ 				var searchDescribe = searchcontent;
+ 				
+ 				user.findOne({'name':userStorage},function(err,thisUser){
+ 					var userArray = thisUser.products;
+ 					var userArrayResult = userArray.filter(function(item,index,array){
+ 						
+ 						
+ 						if((item.describe.indexOf(searchDescribe)>=0)||(item.name==searchDescribe)){
+ 							return true;
+ 						}else{
+ 							return false;
+ 						}
+ 					});
+ 					ejsUser =  {
+ 						list:userArrayResult
+ 					}
+ 					res.render('myproduct',ejsUser);
+ 				});
+ 				break;
+
+ 			// 作品名+描述
+ 			case 3:
+ 				var nameAndDescribe = searchcontent.split(" ");
+ 				var searchName2 = nameAndDescribe[0];
+ 				var searchDescribe2 = nameAndDescribe[1];
+ 				
+ 				user.findOne({'name':userStorage},function(err,thisUser){
+ 					var userArray = thisUser.products;
+ 					var userArrayResult1 = userArray.filter(function(item,index,array){
+ 						return (item.name==searchName2);
+ 					});
+ 					
+ 					var userArrayResult2 = userArrayResult1.filter(function(item,index,array){
+ 						if((item.describe.indexOf(searchDescribe2)>=0)){
+ 							return true;
+ 						}else{
+ 							return false;
+ 						}
+ 					});
+
+ 					ejsUser =  {
+ 						list:userArrayResult2
+ 					}
+ 					res.render('myproduct',ejsUser);
+ 				});
+ 				break;
+ 			default:
+ 				res.render('noproduct');
+
+		}
  	}else{
  		res.render('pleaselogin');
  	}
 });
-
 
 
 // 获取用户信息
